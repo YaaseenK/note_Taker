@@ -1,17 +1,19 @@
 const express = require('express');
 const path = require('path');
 
-const app = express();
+const html_Routes = require('./routes/html_routes');
+const api_Routes = require('./routes/api_routes');
+
 const PORT = 3001;
- 
-// TODO: Invoke app.use() and serve static files from the '/public' folder
+const app = express();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-app.get('/', (req, res) => res.send('./index.html'));
+app.use(html_Routes);
+app.use(api_Routes);
 
-app.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname,'./public/notes.html'))
-});
 
 
 app.listen(PORT, () => {
