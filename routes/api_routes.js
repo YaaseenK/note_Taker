@@ -2,11 +2,12 @@ const express = require('express');
 const fs = require('fs');
 let notesData = require('../db/db.json');
 const uuid = require('../helpers/uuid');
-
+const { validateID } = require('../middleware/delete');
 const path = require('path');
-const { info } = require('console');
 
 const api = express.Router();
+api.use(express.urlencoded({ extended: true }));
+api.use(validateID);
 
     // Get the db of notes
     api.get('/api/notes', (req, res) => res.status(200).json(notesData));
@@ -73,19 +74,12 @@ const api = express.Router();
     // delete Notes 
     api.delete('/api/notes/:id', (req, res) => {
         res.send('recieved request to delete note id:' + req.params.id)
+        let notes = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
         let noteId = req.params.id;
         for (note of notesData) {
             if(note.id === (req.params.id)) {
-                let notes = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
-                console.log(notes);
-                noteAfterDel = notes.filter(selected =>{
-            return selected.id != noteId;
-        });
-            console.log(noteAfterDel);
-        fs.writeFile(`./db/db.json`, JSON.stringify(noteAfterDel), (err) =>
-            err
-                ? console.error(err)
-                : console.log(`note with id: ${note.id}, Titled: ${note.title} has been Deleted`));       
+                let val = true;
+                validateID(note, notes, noteId, val);
         }  
     } 
 });
