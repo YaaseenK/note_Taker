@@ -3,9 +3,7 @@ const fs = require('fs');
 let notesData = require('../db/db.json');
 const uuid = require('../helpers/uuid');
 const { validateID } = require('../middleware/delete');
-const path = require('path');
-const { loadavg } = require('os');
-const { info } = require('console');
+
 
 const api = express.Router();
 api.use(express.urlencoded({ extended: true }));
