@@ -4,6 +4,8 @@ let notesData = require('../db/db.json');
 const uuid = require('../helpers/uuid');
 const { validateID } = require('../middleware/delete');
 const path = require('path');
+const { loadavg } = require('os');
+const { info } = require('console');
 
 const api = express.Router();
 api.use(express.urlencoded({ extended: true }));
@@ -58,13 +60,16 @@ api.use(validateID);
     } else {
         res.status(500).json('Error in posting note');
     }
-    
     });
-
+    
+    //  git notes using note id
     api.get('/api/notes/:id' , (req, res) => {
+        // log the req
         console.info(`${req.method} request received to delete a note with id ${req.params.id}`);
         for (note of notesData) {
+            // if note contains the requested note id
             if(note.id === (req.params.id)) {
+                // return note details 
                 return res.json(`Note Title: ${note.title}, Note Text: ${note.text}`)
             }
         }
@@ -73,14 +78,19 @@ api.use(validateID);
 
     // delete Notes 
     api.delete('/api/notes/:id', (req, res) => {
-        res.send('recieved request to delete note id:' + req.params.id)
+        // message that request has been recieved
+        console.log('recieved request to delete note id:' + req.params.id);
         let notes = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
         let noteId = req.params.id;
         for (note of notesData) {
+            // if note contains the requested note id 
             if(note.id === (req.params.id)) {
                 let val = true;
+                // call this method
                 validateID(note, notes, noteId, val);
-        }  
+        }  else{
+            console.info('no notes found');
+        }
     } 
 });
     
