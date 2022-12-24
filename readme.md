@@ -20,8 +20,8 @@
 Email: yaaseenkhan02@gmail.com
 ## License
 MIT License
-Copyright (c) [2002] [Yaaseen khan]
-[![GitHub license]('https://choosealicense.com/licenses/mit/')
+- Copyright (c) 
+- [![GitHub license]('https://choosealicense.com/licenses/mit/')
 
 ---
 ## Badges
