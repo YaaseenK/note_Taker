@@ -2,12 +2,12 @@ const express = require('express');
 const fs = require('fs');
 let notesData = require('../db/db.json');
 const uuid = require('../helpers/uuid');
-const { validateID } = require('../middleware/delete');
+const { delwithID } = require('../middleware/delete');
 
 
 const api = express.Router();
 api.use(express.urlencoded({ extended: true }));
-api.use(validateID);
+api.use(delwithID);
 
     // Get the db of notes
     api.get('/api/notes', (req, res) => res.status(200).json(notesData));
@@ -85,7 +85,7 @@ api.use(validateID);
             if(note.id === (req.params.id)) {
                 let val = true;
                 // call this method
-                validateID(note, notes, noteId, val);
+                delwithID(note, notes, noteId, val);
         }  else{
             console.info('no notes found');
         }

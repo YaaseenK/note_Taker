@@ -13,8 +13,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
 
-app.use(html_Routes);
 app.use(api_Routes);
+app.use(html_Routes);
+
 
 app.listen(PORT, () => {
     console.log(`Express Server listening for incoming request on PORT: ${PORT}`)
