@@ -25,7 +25,7 @@ MIT License
 
 ---
 ## Badges
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
+![badmath](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
 ## Features
 If your project has a lot of features, list them here.
 ## How to Contribute
