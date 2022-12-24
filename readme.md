@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-# <11 Express.js: Note Taker>
+
+# 11 Express.js: Note Taker
 ## Description
 - Note Taker will help save notes for class, bank information, to do list.. ect
 - I can organize my thoughts and keep track of tasks I need to complete
