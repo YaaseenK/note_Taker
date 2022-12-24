@@ -21,11 +21,11 @@ Email: yaaseenkhan02@gmail.com
 ## License
 MIT License
 - Copyright (c) 
-- [![GitHub license]('https://choosealicense.com/licenses/mit/')
+- [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)
 
 ---
 ## Badges
-![badmath](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
+![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
 ## Features
 If your project has a lot of features, list them here.
 ## How to Contribute
