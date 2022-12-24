@@ -20,10 +20,9 @@
 Email: yaaseenkhan02@gmail.com
 ## License
 MIT License
-
 Copyright (c) [2002] [Yaaseen khan]
+[![GitHub license]( 'https://choosealicense.com/licenses/mit/')
 
-https://choosealicense.com/licenses/mit/#
 ---
 ## Badges
 ![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
