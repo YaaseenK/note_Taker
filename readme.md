@@ -19,9 +19,8 @@
 ## Credits
 Email: yaaseenkhan02@gmail.com
 ## License
-MIT License
-- Copyright (c) 
-- [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)
+MIT License Copyright (c) 
+- ![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)
 
 ---
 ## Badges
