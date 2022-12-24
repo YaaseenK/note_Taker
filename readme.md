@@ -10,8 +10,8 @@
 - [Credits](#credits)
 - [License](#license)
 ## Installation
-npm install express
-npm install fs
+- npm install express
+- npm install fs
 ## Usage
     ```md
     ![alt text](./public/assets/images/screenshot.png)
